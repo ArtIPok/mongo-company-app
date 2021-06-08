@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "60b7a07c9d074de51c2ba8d1"
+  },
+  "firstName": "John",
+  "lastName": "Doe",
+  "department": "60b7a39850b14d5a47ede98b",
+  "salary": "6000"
+},{
+  "_id": {
+    "$oid": "60b7a33450b14d5a47ede987"
+  },
+  "firstName": "Amanda",
+  "lastName": "Doe",
+  "department": "60b7a39850b14d5a47ede98c",
+  "salary": "3000"
+},{
+  "_id": {
+    "$oid": "60b7a33450b14d5a47ede988"
+  },
+  "firstName": "Jonathan",
+  "lastName": "Wilson",
+  "departmen": "",
+  "department": "60b7a39850b14d5a47ede98d",
+  "salary": "4000"
+},{
+  "_id": {
+    "$oid": "60b7a33450b14d5a47ede989"
+  },
+  "firstName": "Thomas",
+  "lastName": "Jefferson",
+  "department": "60b7a39850b14d5a47ede98d",
+  "salary": "4000"
+},{
+  "_id": {
+    "$oid": "60b7a33450b14d5a47ede98a"
+  },
+  "firstName": "Emma",
+  "lastName": "Cowell",
+  "department": "60b7a39850b14d5a47ede98d",
+  "salary": "5000"
+}]
