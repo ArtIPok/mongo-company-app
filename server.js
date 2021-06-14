@@ -22,7 +22,7 @@ app.use((req, res) => {
 
 // connects with the database
 // mongoose.connect('mongodb://localhost:27017/companyDB', { useNewUrlParser: true });
-mongoose.connect('mongodb+srv://ArtI:Kodilla2021@cluster0.8isjm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://ArtI:Kodilla2021@cluster0.8isjm.mongodb.net/companyDB?retryWrites=true&w=majority', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.once('open', () => {
