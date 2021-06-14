@@ -88,13 +88,13 @@ describe('Employee', () => {
   })
 
 
-  it('should br correct', () => {
+  it('should be correct', () => {
     const cases = [
       {
         firstName: 'Art',
         lastName: 'Pok',
         department: 'It',
-        salary: 2000,
+        salary: 3000,
       },
       {
         firstName: 'Amanda',
