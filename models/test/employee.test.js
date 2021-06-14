@@ -43,7 +43,7 @@ describe('Employee', () => {
     const cases = [{}, []];
 
     for(let test of cases) {
-      const emp = new Employee({ firstName: test, lastName: 'Pok', department: 'IT' });;
+      const emp = new Employee({ firstName: test, lastName: 'Pok', department: 'IT', salary: 2000 });;
 
       emp.validate(err => {
         expect(err.errors.firstName).to.exist;
@@ -55,7 +55,7 @@ describe('Employee', () => {
     const cases = [{}, []];
 
     for(let test of cases) {
-      const emp = new Employee({ firstName: 'Art', lastName: test, department: 'IT' });;
+      const emp = new Employee({ firstName: 'Art', lastName: test, department: 'IT', salary: 3000 });;
 
       emp.validate(err => {
         expect(err.errors.lastName).to.exist;
@@ -67,7 +67,7 @@ describe('Employee', () => {
     const cases = [{}, []];
 
     for(let test of cases) {
-      const emp = new Employee({ firstName: 'Art', lastName: 'Pok', department: test });
+      const emp = new Employee({ firstName: 'Art', lastName: 'Pok', department: test, salary: 2000 });
 
       emp.validate(err => {
         expect(err.errors.department).to. exist;
