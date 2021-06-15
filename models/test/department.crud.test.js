@@ -39,7 +39,6 @@ describe('Department', () => {
 
     it('should return a proper document by "name" with "findOne" method', async () => {
       const department = await Department.findOne({ name: 'Department #1' });
-      const expectedName = 'Department #1';
       expect(department.name).to.be.equal('Department #1');
     });
   });
@@ -50,8 +49,9 @@ describe('Department', () => {
     })
 
     it('should insert new document with "insertOne" method', async () => {
-      const department = new Department({ name: 'Department #1' });
-      await department.save();
+      // const department = new Department({ name: 'Department #1' });
+      await Department.insertOne({ name: 'newDepartment' });
+      // await department.save();
       // const saveedDepartment = await Department.findOne({ name: 'Department #1' });
       // expect(department.name).to.not.be.null;
       expect(department.isNew).to.be.false;
@@ -59,16 +59,15 @@ describe('Department', () => {
   });
 
   describe('Updating data', () => {
-    afterEach( async () => {
-      await Department.deleteMany();
-    });
-
     beforeEach(async () => {
       const testDepOne = new Department({ name: 'Department #1' });
       await testDepOne.save();
     
       const testDepTwo = new Department({ name: 'Department #2' });
       await testDepTwo.save();
+    });
+    afterEach( async () => {
+      await Department.deleteMany();
     });
 
     it('should properly update one document with "updateOne" method', async () => {
@@ -89,10 +88,11 @@ describe('Department', () => {
     it('should properly update multiple documents with "updateMany" method', async () => {
       await Department.updateMany({}, { $set: { name: 'Department' }});
       const updatedDepartments = await Department.find();
-      // expect(updatedDepartments[0].name).to.be.equal('Department');
-      // expect(updatedDepartments[1].name).to.be.equal('Department');
+      expect(updatedDepartments[0].name).to.be.equal('Department');
+      expect(updatedDepartments[1].name).to.be.equal('Department');
       // or:
       expect(updatedDepartments.length).to.be.equal(2);
+      // expect(updatedDepartments.name).to.be.equal('Department');
     });
   });
 

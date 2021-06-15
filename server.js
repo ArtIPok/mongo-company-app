@@ -22,7 +22,10 @@ app.use((req, res) => {
 
 // connects with the database
 // mongoose.connect('mongodb://localhost:27017/companyDB', { useNewUrlParser: true });
-mongoose.connect('mongodb+srv://ArtI:Kodilla2021@cluster0.8isjm.mongodb.net/companyDB?retryWrites=true&w=majority', { useNewUrlParser: true });
+// mongoose.connect('mongodb+srv://ArtI:Kodilla2021@cluster0.8isjm.mongodb.net/companyDB?retryWrites=true&w=majority', { useNewUrlParser: true });
+// const db = mongoose.connection;
+const dbURI = process.env.NODE_ENV === 'production' ? 'url to remote db' : 'url to local db';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
 db.once('open', () => {
@@ -30,6 +33,8 @@ db.once('open', () => {
 });
 db.on('error', err => console.log('Error ' + err));
 
-app.listen('8000', () => {
+const server = app.listen('8000', () => {
   console.log('Server is running on port: 8000');
 });
+
+module.exports = server;

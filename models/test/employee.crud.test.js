@@ -56,8 +56,9 @@ describe('Employee', () => {
 
   describe('Creating data', () => {
     it('should insert new document with "insertOne" method', async () => {
-      const newEmployee = new Employee({ firstName: 'Art', lastName: 'Pok', department: 'Mark', salary: 4000 });
-      await newEmployee.save();
+      await Employee.insertOne({ firstName: 'Art', lastName: 'Pok', department: 'Mark', salary: 4000 });
+      // const newEmployee = new Employee({ firstName: 'Art', lastName: 'Pok', department: 'Mark', salary: 4000 });
+      // await newEmployee.save();
       expect(newEmployee.isNew).to.be.false;
     });
   });
@@ -95,6 +96,7 @@ describe('Employee', () => {
       const employees = await Employee.find();
       expect(employees[0].department).to.be.equal('IT');
       expect(employees[1].department).to.be.equal('IT');
+      // expect(employees.department).to.be.equal('IT');
     });
   });
 
